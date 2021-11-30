@@ -1,0 +1,168 @@
+
+.font_stuff {
+color: green;
+text-shadow: 1px 1px #28d747;
+font: italic 1.2em "Fira Sans", serif;
+}
+.font_stuff2 {
+color: black;
+text-shadow: none;
+}
+
+.image_style {
+    float: right;
+    position:relative;
+    width:  100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.image_text {
+    color: black;
+}
+
+button {
+  float: right;
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:20px;
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid green; /* Green */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button_table {
+  float: center;
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:20px;
+  border-radius: 5px;
+  background-color: orange;
+  border: 2px solid green; /* Green */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #1772FF;
+$color-form-highlight: #EEEEEE;
+
+*, *:before, *:after {
+	box-sizing:border-box;
+}
+
+body {
+	padding:$base-spacing-unit;
+	font-family:'Source Sans Pro', sans-serif;
+	margin:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin:0;
+}
+
+.container {
+	max-width: 1000px;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+}
+
+.table {
+	width:65%;
+	border:1px solid $color-form-highlight;
+}
+
+.table-header {
+	display:flex;
+	width:65%;
+	background:#000;
+	padding:($half-spacing-unit * 1.5) 0;
+}
+
+.table-row {
+	display:flex;
+	width:65%;
+	padding:($half-spacing-unit * 1.5) 0;
+
+	&:nth-of-type(odd) {
+		background:$color-form-highlight;
+	}
+}
+
+.table-data {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+.header__item {
+	flex: 1 1 20%;
+	text-align:center;
+	color: white;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+.filter__link {
+	color:white;
+	text-decoration: none;
+	position:relative;
+	display:inline-block;
+	padding-left:$base-spacing-unit;
+	padding-right:$base-spacing-unit;
+
+	&::after {
+		content:'';
+		position:absolute;
+		right:-($half-spacing-unit * 1.5);
+		color:white;
+		font-size:$half-spacing-unit;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&.desc::after {
+		content: '(desc)';
+	}
+
+	&.asc::after {
+		content: '(asc)';
+	}
+
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static "images" as baseUrl %}
+<link rel="stylesheet" href="{% static 'plant.css' %}">
+
+<html lang="en">
+
+<title> {{user.first_name}}'s Plants</title>
+<h1> Wirebot Dashboard </h1>
+
+    {% if user.is_authenticated %}
+
+        <h1 class="center">{{user.first_name}}'s plants </h1>
+		<button class="button"><a href="/">Home  </a></button>
+
+<br><b>  PLANTS  </b>
+		{% for dest in dests %}
+			{% if dest.user_name == user.username %}
+			<div class="destination_name">
+								<u> PLANT NAME:</u>  {{dest.plant_name}} <br>
+								<u> Location (x,y,z): </u>  {{dest.location_xyz}} <br>
+								<img src="{{dest.img.url}}" alt="">
+							</div>
+			{% endif %}
+		{% endfor %}
+    {% else %}
+         <button><a href="/">Home</a></button> <br>
+         <button><a href="/accounts/login">Login</a></button>
+    {% endif %}
+
+
+<p><script src="/static/try.js"></script></p>
+
+
+
+</html>
