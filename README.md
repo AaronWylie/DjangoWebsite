@@ -6,3 +6,7 @@ There is some screenshots also of the website in the respitory as "website scree
 The website was built for a senior design project at Texas A&M Univeristy.  The purpose of the project is to create a wire bot 
 system (similar to NFL cameras)that uses machine learning to image plants in a greenhouse and categorize them.  The website 
 displays this information for individual users.  The website uses PBKDF2 security for all users for privacy.
+
+To access an account with data use the login:
+Username: sammy
+Password: 123
